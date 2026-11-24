@@ -1,1 +1,200 @@
 
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio | Personal Website</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f6;
+  color: #202020;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 8%;
+  align-items: center;
+}
+
+.logo { font-weight: bold; letter-spacing: 2px; }
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 130px 8% 110px;
+}
+
+.tag {
+  color: #888;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: clamp(48px, 9vw, 100px);
+  line-height: 1.05;
+  letter-spacing: -4px;
+  margin: 30px 0;
+}
+
+.hero p {
+  color: #777;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+section {
+  padding: 65px 8%;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.project {
+  background: #ededeb;
+  padding: 45px 30px;
+  min-height: 200px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.project:hover {
+  background: #e2e2df;
+  transform: translateY(-4px);
+}
+
+.project span {
+  color: #888;
+  font-size: 12px;
+}
+
+.project h3 {
+  font-size: 24px;
+  margin: 25px 0 12px;
+}
+
+.project p, .about p {
+  color: #777;
+  line-height: 1.8;
+}
+
+.about {
+  background: #efefed;
+}
+
+.contact a {
+  display: inline-block;
+  margin-top: 25px;
+  color: #222;
+}
+
+footer {
+  padding: 30px 8%;
+  color: #999;
+  font-size: 12px;
+}
+
+@media(max-width: 650px) {
+  nav { padding: 22px 6%; }
+  nav a { margin-left: 12px; }
+  .hero { padding: 90px 6%; }
+  section { padding: 55px 6%; }
+  .projects { grid-template-columns: 1fr; }
+  h1 { letter-spacing: -2px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">MY PORTFOLIO.</div>
+  <div>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tag">WELCOME TO MY WORLD</div>
+  <h1>Creative<br>Ideas & Work.</h1>
+  <p>
+    Hello, I'm Your Name.<br>
+    Welcome to my personal portfolio website.
+  </p>
+</div>
+
+<section id="work">
+  <h2 class="section-title">Selected Works.</h2>
+  <div class="projects">
+
+    <div class="project">
+      <span>PROJECT 01 / 2026</span>
+      <h3>Project One</h3>
+      <p>Add your project description here.</p>
+    </div>
+
+    <div class="project">
+      <span>PROJECT 02 / 2026</span>
+      <h3>Project Two</h3>
+      <p>Add your project description here.</p>
+    </div>
+
+    <div class="project">
+      <span>PROJECT 03 / 2026</span>
+      <h3>Project Three</h3>
+      <p>Add your project description here.</p>
+    </div>
+
+    <div class="project">
+      <span>PROJECT 04 / 2026</span>
+      <h3>Project Four</h3>
+      <p>Add your project description here.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">About Me.</h2>
+  <p>
+    I am a creative individual passionate about
+    design, ideas and meaningful experiences.
+    <br><br>
+    This is where I share my projects, skills
+    and creative journey.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Let's Connect.</h2>
+  <p>Have a project or an idea? Feel free to contact me.</p>
+  <a href="mailto:hello@example.com">hello@example.com ↗</a>
+</section>
+
+<footer>
+  © 2026 MY PORTFOLIO. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
+
