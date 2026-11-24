@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography Portfolio</title>
+
+<style>
+
+:root {
+  --blue: #65B7FF;
+  --black: #202529;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #65B7FF;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Right navigation */
+
+.navigation {
+  position: fixed;
+  top: 22px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.navigation .exhibition-link {
+  margin-top: 10px;
+}
+
+/* Main photography window */
+
+.gallery {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  background: #b9b8ae;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Continuous photography collage */
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: clamp(20px, 4vw, 65px);
+  grid-auto-flow: dense;
+  gap: 0;
+}
+
+.photo {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #b9b8ae;
+  min-width: 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) contrast(0.92);
+  transition: transform 0.8s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.035);
+}
+
+.photo-1 {
+  grid-column: span 7;
+  grid-row: span 9;
+}
+
+.photo-2 {
+  grid-column: span 5;
+  grid-row: span 6;
+}
+
+.photo-3 {
+  grid-column: span 5;
+  grid-row: span 7;
+}
+
+.photo-4 {
+  grid-column: span 7;
+  grid-row: span 8;
+}
+
+.photo-5 {
+  grid-column: span 5;
+  grid-row: span 7;
+}
+
+.photo-6 {
+  grid-column: span 7;
+  grid-row: span 8;
+}
+
+.photo-7 {
+  grid-column: span 5;
+  grid-row: span 7;
+}
+
+.photo-8 {
+  grid-column: span 7;
+  grid-row: span 8;
+}
+
+/* Bottom left contact */
+
+.contact {
+  position: fixed;
+  bottom: 22px;
+  left: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+}
+
+/* Project and exhibition windows */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--blue);
+  overflow-y: auto;
+  padding: 70px 10vw;
+}
+
+.overlay:target {
+  display: block;
+}
+
+.close {
+  position: fixed;
+  top: 22px;
+  right: 24px;
+  font-size: 28px;
+  z-index: 110;
+}
+
+.project-images {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.exhibition-content {
+  max-width: 750px;
+  margin: 10vh auto;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.exhibition-content h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+
+  .navigation {
+    top: 16px;
+    right: 16px;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .gallery {
+    top: 130px;
+    bottom: 75px;
+    left: 4vw;
+    transform: none;
+    width: 92vw;
+    height: auto;
+  }
+
+  .collage {
+    grid-auto-rows: 5vw;
+  }
+
+  .contact {
+    left: 16px;
+    bottom: 16px;
+    font-size: 11px;
+  }
+
+  .overlay {
+    padding: 65px 4vw 30px;
+  }
+
+  .close {
+    right: 16px;
+    top: 16px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery {
+    scroll-behavior: auto;
+  }
+
+  .photo img {
+    transition: none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Right top navigation -->
+
+<nav class="navigation" aria-label="Projects">
+  <a href="#project-01">Between Places</a>
+  <a href="#project-02">Silent Moments</a>
+  <a href="#project-03">Fragments</a>
+  <a href="#exhibitions" class="exhibition-link">
+    Exhibitions
+  </a>
+</nav>
+
+<!-- Main scrolling photography collage -->
+
+<main class="gallery" id="gallery" tabindex="0"
+      aria-label="Photography gallery">
+
+  <div class="collage">
+
+    <a href="#project-01" class="photo photo-1">
+      <img
+        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1400&q=85"
+        alt="Between Places">
+    </a>
+
+    <a href="#project-02" class="photo photo-2">
+      <img
+        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000&q=85"
+        alt="Silent Moments">
+    </a>
+
+    <a href="#project-03" class="photo photo-3">
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000&q=85"
+        alt="Fragments">
+    </a>
+
+    <a href="#project-02" class="photo photo-4">
+      <img
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&q=85"
+        alt="Silent Moments">
+    </a>
+
+    <a href="#project-01" class="photo photo-5">
+      <img
+        src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1000&q=85"
+        alt="Between Places">
+    </a>
+
+    <a href="#project-03" class="photo photo-6">
+      <img
+        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1400&q=85"
+        alt="Fragments">
+    </a>
+
+    <a href="#project-01" class="photo photo-7">
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&q=85"
+        alt="Between Places">
+    </a>
+
+    <a href="#project-02" class="photo photo-8">
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85"
+        alt="Silent Moments">
+    </a>
+
+  </div>
+
+</main>
+
+<!-- Bottom left contact -->
+
+<footer class="contact">
+
+  <a href="mailto:hello@example.com">
+    Email
+  </a>
+
+  <a href="https://www.instagram.com/"
+     target="_blank"
+     rel="noopener noreferrer">
+    Instagram
+  </a>
+
+</footer>
+
+<!-- Project 01 -->
+
+<section class="overlay" id="project-01">
+
+  <a href="#gallery" class="close" aria-label="Close">
+    &times;
+  </a>
+
+  <div class="project-images">
+
+    <img
+      src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1800&q=90"
+      alt="Between Places">
+
+    <img
+      src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1800&q=90"
+      alt="Between Places">
+
+    <img
+      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1800&q=90"
+      alt="Between Places">
+
+  </div>
+
+</section>
+
+<!-- Project 02 -->
+
+<section class="overlay" id="project-02">
+
+  <a href="#gallery" class="close" aria-label="Close">
+    &times;
+  </a>
+
+  <div class="project-images">
+
+    <img
+      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1800&q=90"
+      alt="Silent Moments">
+
+    <img
+      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1800&q=90"
+      alt="Silent Moments">
+
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=90"
+      alt="Silent Moments">
+
+  </div>
+
+</section>
+
+<!-- Project 03 -->
+
+<section class="overlay" id="project-03">
+
+  <a href="#gallery" class="close" aria-label="Close">
+    &times;
+  </a>
+
+  <div class="project-images">
+
+    <img
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1800&q=90"
+      alt="Fragments">
+
+    <img
+      src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1800&q=90"
+      alt="Fragments">
+
+  </div>
+
+</section>
+
+<!-- Exhibition records -->
+
+<section class="overlay" id="exhibitions">
+
+  <a href="#gallery" class="close" aria-label="Close">
+    &times;
+  </a>
+
+  <div class="exhibition-content">
+
+    <h1>Exhibitions</h1>
+
+    <!-- Add your exhibition records here -->
+
+  </div>
+
+</section>
+
+</body>
+</html>
