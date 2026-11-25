@@ -7,4 +7,13 @@ body{background-position:center 52%}
 .one{grid-template-rows:12vw 8vw}.two{grid-template-rows:12vw}.three{grid-template-rows:14vw}
 @media(max-width:700px){body{background-position:left center}.gallery{left:3vw;bottom:12vh;width:23vw;height:30vh}.one{grid-template-rows:12vw 9vw}.two{grid-template-rows:12vw}.three{grid-template-rows:14vw}}
 @media(min-width:701px) and (max-height:500px){.gallery{top:auto;bottom:14vh;height:38vh}}
+
+/* Wider, more open gallery, with transparent gutters. */
+.gallery{left:2.7vw;bottom:12vh;width:30vw;height:55vh;display:block}
+.strip{gap:8px;margin-bottom:8px}
+.one{grid-template-columns:minmax(0,58fr) minmax(0,42fr);grid-template-rows:14vw 10vw}
+.two{grid-template-columns:minmax(0,40fr) minmax(0,60fr);grid-template-rows:15vw}
+.three{grid-template-columns:minmax(0,62fr) minmax(0,38fr);grid-template-rows:17vw}
+@media(max-width:700px){.gallery{left:3vw;width:32vw;height:42dvh;bottom:12vh}.strip{gap:5px;margin-bottom:5px}.one{grid-template-rows:15vw 11vw}.two{grid-template-rows:16vw}.three{grid-template-rows:18vw}}
+@media(min-width:701px) and (max-height:500px){.gallery{bottom:14vh;height:55vh}}
 </style></head><body><nav aria-label="Projects"><a href="family.html">Family</a><a href="untitled.html">Untitled</a><a href="99.html">99%</a><a href="gul.html">Gül</a><a href="7-11.html">7-11 Diary</a><a href="noname.html">noname</a><button onclick="document.getElementById('exhibitions').showModal()">Exhibitions</button></nav><main class="gallery" aria-label="Selected works"><div class="strip one"><a href="family.html"><img src="family/cover.jpeg" alt="Family"></a><a href="untitled.html"><img src="untitled/cover.jpg" alt="Untitled"></a><a href="untitled.html"><img src="untitled/cover2.jpg" alt="Untitled, second cover"></a></div><div class="strip two"><a href="99.html"><img src="99%25/cover.jpeg" alt="99%"></a><a href="gul.html"><img src="https://i.ytimg.com/vi/39YeVBRD7hU/hqdefault.jpg" alt="Gül"></a></div><div class="strip three"><a href="7-11.html"><img src="7-11%20diary/cover.jpeg" alt="7-11 Diary"></a><a href="noname.html"><img src="noname/cover.jpeg" alt="noname"></a></div></main><footer><a href="mailto:iamakidaadil@gmail.com">Email</a><a href="https://www.instagram.com/i_am_akidaadil/" target="_blank" rel="noopener noreferrer">Instagram</a></footer><dialog id="exhibitions"><button onclick="this.closest('dialog').close()" aria-label="Close">×</button><h2>Exhibitions</h2></dialog></body></html>
